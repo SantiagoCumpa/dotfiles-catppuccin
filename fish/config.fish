@@ -1,4 +1,3 @@
-# Fastfetch
 if status is-interactive
    set -g fish_greeting ""	
    fastfetch
@@ -6,12 +5,6 @@ end
 
 # Variables
 set -gx MICRO_TRUECOLOR 1
-
-# Alias
-alias ls='eza --icons -lha --group-directories-first'
-alias cat='bat --color=always'
-alias lzd='lazydocker'
-alias dck='docker'
 
 # FZF Default Style
 set -gx FZF_DEFAULT_OPTS "\
@@ -21,3 +14,28 @@ set -gx FZF_DEFAULT_OPTS "\
    --color=selected-bg:#45475A \
    --color=border:#6C7086,label:#CDD6F4 \
    --style full"
+   
+# General aliases
+alias ls='eza --icons -lha --group-directories-first'
+alias tree='eza --icons --tree --group-directories-first'
+alias cat='bat --color=always'
+alias spac='sudo pacman'
+
+# Git aliases
+alias gini='git init'
+alias gend='rm -r .git'
+alias gclo='git clone'
+alias gadd='git add'
+alias gcom='git commit -m'
+alias gpsh='git push'
+alias gsts='git status'
+alias gcho='git checkout -b'
+alias gpll='git pull'
+alias glog= 'git log'
+
+# Docker aliases
+alias lzd='lazydocker'
+alias dps='docker ps'
+alias dpull='docker pull'
+alias drun='docker run'
+    
