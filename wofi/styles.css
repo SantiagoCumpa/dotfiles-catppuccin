@@ -1,0 +1,54 @@
+* {
+    font-family: "GeistMono Nerd Font";
+    font-size: 12px;
+
+    color: #cdd6f4; /* text */
+    background-color: #1e1e2e; /* base */
+    border-radius: 6px;
+}
+
+window {
+    background-color: #1e1e2e;
+    border: 2px solid #b4befe; /* lavender */
+    padding: 10px;
+}
+
+#input {
+    background-color: #313244; /* surface0 */
+    color: #cdd6f4;            /* text */
+    border: none;
+    padding: 6px;
+    margin-bottom: 10px;
+}
+
+#inner-box {
+    background-color: transparent;
+}
+
+#outer-box {
+    background-color: transparent;
+}
+
+#scroll {
+    margin: 0;
+}
+
+#entry {
+    padding: 8px;
+    margin: 4px 0;
+    border-radius: 4px;
+    background-color: transparent;
+}
+
+#entry:selected {
+    background-color: #b4befe; /* lavender */
+    color: #1e1e2e;            /* base */
+}
+
+#text {
+    color: inherit;
+}
+
+#text:selected {
+    color: #1e1e2e; /* base */
+}

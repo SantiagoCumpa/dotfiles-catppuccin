@@ -1,0 +1,180 @@
+{
+    "layer": "top",
+    "position": "top",
+    "spacing": 0,
+    "modules-left": [
+    	"custom/logo",
+    	"hyprland/workspaces",
+    	"user",
+    	"memory",
+    	"cpu",
+    	"idle_inhibitor",
+    	],
+    "modules-center": [
+    	"custom/music"
+    	],
+    "modules-right": [
+    	"hyprland/language",
+    	"wireplumber",
+    	"network",
+    	"bluetooth",
+    	"backlight",
+    	"battery",
+    	"clock#time",
+    	"clock#date",
+    	"custom/notification",
+    	"group/power"
+    	],
+    "custom/logo": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "~/.config/wofi/launchers/misc/launcher.sh &"
+     },
+    "hyprland/workspaces": {
+         "disable-scroll": true,
+         "format": "{icon}",
+         "format-icons": {
+         	"active":  "󰮯",
+         	"default": "󰊠",
+         	"empty": "󰧵",         	
+         	"urgent": "󱙝",
+         },
+         "persistent-workspaces": {
+            "*": [1,2,3,4,5,6] 
+         },
+    },
+    "user": {
+		"format": "󱎫 {work_M}min",
+    },
+    "memory": {
+    	"interval": 60,
+    	"format": " {used:0.1f}G/{total:0.1f}G"
+    },
+	"cpu": {
+		"interval": 10,
+		"format": " {}%",
+		"max-length": 10
+	},
+	"idle_inhibitor": {
+	    "format": "{icon}",
+	    "format-icons": {
+	        "activated": "  on",
+	        "deactivated": "  off"
+	    },
+	    "tooltip": false
+	},
+    "custom/music": {
+    	"class": "my-module",
+        "format": "  {}",
+        "escape": true,
+        "interval": 5,
+        "tooltip": false,
+        "exec": "playerctl metadata --format='{{ title }}'",
+        "on-click": "playerctl play-pause",
+        "max-length": 50
+    },
+	"hyprland/language": {
+     	"format": "󰌌 {short}"	
+     },
+    "wireplumber": {
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "󰂰",
+        "format-muted": "󰝟 muted",
+        "format-icons": {
+            "headphones": "",
+            "default": ["󰕿", "󰖀", "󰕾"]
+        },
+        "scroll-step": 5,
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+    },
+    "network": {
+        "format-wifi" : "{icon}",
+        "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"],
+        "format-ethernet": "󰈀",
+        "format-disconnected" : "󰤭",
+        "tooltip": false,
+    	"interval": 10,
+    	"on-click": "alacritty --class tui -e nmtui"
+    },
+    "bluetooth": {
+    	"format": "",
+    	"format-disabled": "󰂲",
+    	"format-connected": " {num_connections}",
+    	"on-click": "alacritty --class tui -e bluetui"
+    },
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{percent}% {icon}",
+        "format-icons": ["", ""]
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 20
+        },
+        "format": "{icon} {capacity}%",
+		"format-icons": {	
+	        "charging": ["󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"],
+	        "default":  ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+		},
+		"tootip": false
+    },
+    "clock#date": {
+        "format": "󰸗 {:%d/%m/%Y}",
+        "tooltip-format": "<span size='10pt'>{calendar}</span>",
+		"calendar": {
+           	"mode": "month",
+           	"format": {
+        	    "months": "<span color='#ff6699'><b>{}</b></span>",
+                "days": "<span color='#cdd6f4'><b>{}</b></span>",
+                "weekdays": "<span color='#7CD37C'><b>{}</b></span>",
+                "today": "<span color='#ffcc66'><b>{}</b></span>"
+            }
+        }
+    },
+    "clock#time": {
+        "timezone": "America/Lima",
+        "format": " {:%H:%M}",
+        "tooltip": false
+    },
+    "group/power": {
+    	"orientation": "inherit",
+    	"drawer": {
+    		"click-to-reveal": true,
+    		"transition-duration": 250,
+    	    "children-class": "not-power",
+    	    "transition-left-to-right": false,
+    	},
+    	"modules": [
+    		"custom/settings",
+    	    "custom/logout",
+    	    "custom/lock",
+    	    "custom/reboot",
+    	    "custom/power", 
+    	]
+    },
+    "custom/settings": {
+    	"format": "",
+    	"tooltip": false
+    },
+    "custom/logout": {
+        "format": "󰍃",
+        "tooltip": false,
+        "on-click": "hyprctl dispatch exit"
+    },
+    "custom/lock": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "hyprlock"
+    },
+    "custom/reboot": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "reboot"
+    },
+    "custom/power": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "shutdown now"
+    }
+}

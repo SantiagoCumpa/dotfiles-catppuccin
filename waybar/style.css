@@ -1,0 +1,182 @@
+@import "mocha.css";
+
+* {
+	all: unset;
+	font-family: "JetBrainsMono Nerd Font";
+  	font-size: 13px;
+	font-weight: bold;
+  	padding: 0;
+  	margin: 0;
+  	border: none;
+}
+
+#waybar {
+	background: transparent;
+  	color: @text;
+  	margin: 0px;
+}
+
+/*---WORKSPACES---*/
+#workspaces {
+	background: @surface0;
+  	border-radius: 1rem;
+  	margin: 0.5rem 0.25rem;
+  	padding: 0.25rem 0.5rem;
+}
+#workspaces button {
+  	background: transparent;
+  	color: @blue;
+  	border: none;
+  	margin: 0 0.5rem;
+}
+#workspaces label               { font-size: 16px;  }
+#workspaces button:nth-child(1) { color: @blue;		}
+#workspaces button:nth-child(2) { color: @red;      }
+#workspaces button:nth-child(3) { color: @peach;    }
+#workspaces button:nth-child(4) { color: @sky;      }
+#workspaces button:nth-child(5) { color: @pink;     }
+#workspaces button:nth-child(6) { color: @green;    }
+#workspaces button.active       { color: @yellow;   }
+#workspaces button.empty        { color: @overlay0; }
+#workspaces button:hover {
+  	box-shadow: inherit;
+  	text-shadow: inherit;
+}
+
+/*---DEFAULT---*/
+#custom-logo,
+#user,
+#memory,
+#cpu,
+#idle_inhibitor,
+#custom-music,
+#language,
+#wireplumber,
+#network,
+#bluetooth,
+#backlight,
+#battery,
+#clock,
+#power {
+  	background: @surface0;
+  	border-radius: 1rem;
+ 	margin: 0.5rem 0.25rem;
+ 	padding: 0rem 0.75rem;
+}
+
+/*---LOGO---*/
+#custom-logo {
+	margin: 0.5rem 0.25rem 0.5rem 1rem;
+ 	padding: 0 1.3rem 0 1rem;
+	font-size: 15px;
+	color: @lavender;
+}
+
+/*---USER(UPTIME)---*/
+#user {
+ 	color: @teal;
+}
+
+/*---RAM---*/
+#memory {
+ 	color: @flamingo;
+}
+
+/*---CPU---*/
+#cpu {
+ 	color: @maroon;
+}
+
+/*---IDLE---*/
+#idle_inhibitor {
+ 	color: @mauve;
+}
+
+/*---MUSIC---*/
+#custom-music {
+	color: @red;
+}
+
+/*---KEYBOARD-LANG---*/
+#language {
+	color: @sapphire;
+}
+
+/*---VOLUME---*/
+#wireplumber {
+	color: @lavender;
+}
+
+/*---NETWORK---*/
+#network {
+	color: @yellow;
+	padding-right: 1rem;
+}
+
+/*---BLUETOOTH---*/
+#bluetooth {
+	color: @blue;
+}
+
+/*---BACKLIGHT---*/
+#backlight {
+  	color: @yellow;
+}
+
+/*---BATTERY---*/
+#battery {
+	color: @green;
+}
+#battery.charging {
+  	color: @teal;
+}
+#battery.warning:not(.charging) {
+  	color: @peach;
+}
+#battery.critical:not(.charging) {
+  	color: @red;
+}
+
+/*---CLOCK&DATE---*/
+#clock {
+}
+#clock.time {
+  	color: @teal;
+}
+#clock.date {
+  	color: @mauve;
+}
+
+/*---POWER---*/
+#power {
+	margin: 0.5rem 1rem 0.5rem 0.25rem;
+	padding: 0 0.4rem 0 0.25rem;
+}
+#custom-settings,
+#custom-logout, 
+#custom-lock, 
+#custom-reboot,
+#custom-power{
+	padding: 0 0.6rem;
+}
+#custom-settings {
+	color: @text;
+}
+#custom-logout {
+	padding: 0 0.6rem 0 0.75rem;
+	color: @yellow;
+}
+#custom-lock {
+    color: @lavender;
+}
+#custom-reboot {
+	color: @green;
+}
+#custom-power {
+    color: @red;
+}
+
+/*---TOOLTIPS---*/
+tooltip {
+	background: @surface0;
+}
