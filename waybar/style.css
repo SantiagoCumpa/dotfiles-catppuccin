@@ -153,21 +153,26 @@
 	padding: 0 0.4rem 0 0.25rem;
 }
 #custom-settings,
-#custom-logout, 
 #custom-lock, 
+#custom-suspend, 
+#custom-logout, 
 #custom-reboot,
 #custom-power{
+	font-size: 13px;
 	padding: 0 0.6rem;
 }
 #custom-settings {
 	color: @text;
 }
-#custom-logout {
-	padding: 0 0.6rem 0 0.75rem;
-	color: @yellow;
-}
 #custom-lock {
+	padding: 0 0.6rem 0 0.75rem;
     color: @lavender;
+}
+#custom-suspend {
+	color: @peach;
+}
+#custom-logout {
+	color: @yellow;
 }
 #custom-reboot {
 	color: @green;

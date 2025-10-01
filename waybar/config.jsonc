@@ -146,8 +146,9 @@
     	},
     	"modules": [
     		"custom/settings",
-    	    "custom/logout",
     	    "custom/lock",
+    	    "custom/suspend",
+    	    "custom/logout",
     	    "custom/reboot",
     	    "custom/power", 
     	]
@@ -156,15 +157,20 @@
     	"format": "",
     	"tooltip": false
     },
+    "custom/lock": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "hyprlock"
+    },
+    "custom/suspend": {	
+        "format": "󰤄",
+        "tooltip": false,
+        "on-click": "systemctl sleep"
+    },
     "custom/logout": {
         "format": "󰍃",
         "tooltip": false,
         "on-click": "hyprctl dispatch exit"
-    },
-    "custom/lock": {
-        "format": "",
-        "tooltip": false,
-        "on-click": "hyprlock"
     },
     "custom/reboot": {
         "format": "",
