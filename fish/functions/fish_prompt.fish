@@ -29,7 +29,7 @@ function fish_prompt
     set -l git_info (fish_git_prompt)
     if test -n "$git_info"
         set_color -b $seg_git_bg $seg_git_fg
-        printf '%s  ' $git_info
+        printf ' 󰊤%s  ' $git_info
     end
 
     # 4. Exit-code (on error)
