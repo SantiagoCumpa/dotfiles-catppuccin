@@ -87,19 +87,19 @@
         "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
     },
     "network": {
-        "format-wifi" : "{icon}",
+        "format" : "{icon}",
         "format-icons": ["󰤯","󰤟","󰤢","󰤥","󰤨"],
         "format-ethernet": "󰈀",
         "format-disconnected" : "󰤭",
         "tooltip": false,
     	"interval": 10,
-    	"on-click": "alacritty --class tui -e nmtui"
+    	"on-click": "kitty --class tui -e impala"
     },
     "bluetooth": {
     	"format": "",
     	"format-disabled": "󰂲",
     	"format-connected": " {num_connections}",
-    	"on-click": "alacritty --class tui -e bluetui"
+    	"on-click": "kitty --class tui -e bluetui"
     },
     "backlight": {
         "device": "intel_backlight",

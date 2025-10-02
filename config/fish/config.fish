@@ -31,11 +31,10 @@ alias gpsh='git push'
 alias gsts='git status'
 alias gcho='git checkout -b'
 alias gpll='git pull'
-alias glog= 'git log'
+alias glog='git log'
 
 # Docker aliases
 alias lzd='lazydocker'
 alias dps='docker ps'
 alias dpull='docker pull'
 alias drun='docker run'
-    

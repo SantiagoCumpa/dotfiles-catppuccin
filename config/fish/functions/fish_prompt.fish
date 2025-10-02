@@ -46,7 +46,7 @@ function fish_prompt
     printf '❯'
     set_color green
     printf '❯ '
-    set_color red
+    set_color white
 
     # reset stopwatch
     set -g __cmd_start (date '+%s%3N')
