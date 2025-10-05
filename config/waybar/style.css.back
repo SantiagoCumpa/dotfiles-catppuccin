@@ -1,0 +1,208 @@
+@import "mocha.css";
+
+* {
+	all: unset;
+	font-family: "JetBrainsMono Nerd Font";
+  	font-size: 13px;
+	font-weight: bold;
+  	padding: 0;
+  	margin: 0;
+  	border: none;
+}
+
+#waybar {
+	background: transparent;
+  	color: @text;
+  	margin: 0px;
+}
+
+/*---WORKSPACES---*/
+#workspaces {
+	background: @surface0;
+  	border-radius: 1rem;
+  	margin: 0.5rem 0.25rem;
+  	padding: 0.25rem 0.5rem;
+  	border: 2px solid @text;
+}
+#workspaces button {
+  	background: transparent;
+  	color: @blue;
+  	border: none;
+  	margin: 0 0.5rem;
+}
+#workspaces label               { font-size: 16px;  }
+#workspaces button:nth-child(1) { color: @blue;		}
+#workspaces button:nth-child(2) { color: @red;      }
+#workspaces button:nth-child(3) { color: @peach;    }
+#workspaces button:nth-child(4) { color: @sky;      }
+#workspaces button:nth-child(5) { color: @pink;     }
+#workspaces button:nth-child(6) { color: @green;    }
+#workspaces button.active       { color: @yellow;   }
+#workspaces button.empty        { color: @overlay0; }
+#workspaces button:hover {
+  	box-shadow: inherit;
+  	text-shadow: inherit;
+}
+
+/*---DEFAULT---*/
+#custom-logo,
+#user,
+#memory,
+#cpu,
+#idle_inhibitor,
+#custom-music,
+#language,
+#wireplumber,
+#network,
+#bluetooth,
+#backlight,
+#battery,
+#clock,
+#power {
+  	background: @surface0;
+  	border-radius: 1rem;
+ 	margin: 0.5rem 0.25rem;
+ 	padding: 0rem 0.75rem;
+}
+
+/*---LOGO---*/
+#custom-logo {
+	margin: 0.5rem 0.25rem 0.5rem 1rem;
+ 	padding: 0 1.3rem 0 1rem;
+	font-size: 15px;
+	color: @lavender;
+  	border: 2px solid @lavender;
+}
+
+/*---USER(UPTIME)---*/
+#user {
+ 	color: @teal;
+  	border: 2px solid @teal;
+}
+
+/*---RAM---*/
+#memory {
+ 	color: @flamingo;
+  	border: 2px solid @flamingo; 	
+}
+
+/*---CPU---*/
+#cpu {
+ 	color: @maroon;
+  	border: 2px solid @maroon; 	
+}
+
+/*---IDLE---*/
+#idle_inhibitor {
+ 	color: @mauve;
+  	border: 2px solid @mauve; 	
+}
+
+/*---MUSIC---*/
+#custom-music {
+	color: @red;
+  	border: 2px solid @red; 	
+}
+
+/*---KEYBOARD-LANG---*/
+#language {
+	color: @sapphire;
+  	border: 2px solid @sapphire; 	
+}
+
+/*---VOLUME---*/
+#wireplumber {
+	color: @lavender;
+  	border: 2px solid @lavender; 	
+}
+
+/*---NETWORK---*/
+#network {
+	color: @yellow;
+	padding-right: 1.05rem;
+  	border: 2px solid @yellow; 	
+}
+
+/*---BLUETOOTH---*/
+#bluetooth {
+	color: @blue;
+  	border: 2px solid @blue; 	
+}
+
+/*---BACKLIGHT---*/
+#backlight {
+  	color: @yellow;
+  	border: 2px solid @yellow; 
+  		
+}
+
+/*---BATTERY---*/
+#battery {
+	color: @green;
+  	border: 2px solid @green; 	
+}
+#battery.charging {
+  	color: @teal;
+  	border: 2px solid @teal; 	
+}
+#battery.warning:not(.charging) {
+  	color: @peach;
+  	border: 2px solid @peach; 	
+}
+#battery.critical:not(.charging) {
+  	color: @red;
+  	border: 2px solid @red; 	
+}
+
+/*---CLOCK&DATE---*/
+#clock {
+}
+#clock.time {
+  	color: @sky;
+  	border: 2px solid @sky; 	
+}
+#clock.date {
+  	color: @mauve;
+  	border: 2px solid @mauve; 	
+}
+
+/*---POWER---*/
+#power {
+	margin: 0.5rem 1rem 0.5rem 0.25rem;
+	padding: 0 0.4rem 0 0.25rem;
+  	border: 2px solid @text; 	
+}
+#custom-settings,
+#custom-lock, 
+#custom-suspend, 
+#custom-logout, 
+#custom-reboot,
+#custom-power{
+	font-size: 15px;
+	font-weight: bolder;
+	padding: 0 0.6rem;
+}
+#custom-settings {
+	color: @text;
+}
+#custom-lock {
+	padding: 0 0.6rem 0 0.75rem;
+    color: @lavender;
+}
+#custom-suspend {
+	color: @peach;
+}
+#custom-logout {
+	color: @yellow;
+}
+#custom-reboot {
+	color: @green;
+}
+#custom-power {
+    color: @red;
+}
+
+/*---TOOLTIPS---*/
+tooltip {
+	background: @surface0;
+}
