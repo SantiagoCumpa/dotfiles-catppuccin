@@ -1,26 +1,17 @@
 #!/bin/bash
-LOW=30
+LOW=25
 CRITICAL=10
 TOP=95
 
 ICON_PATH=$HOME/.icons
 SOUND_PATH=$HOME/.sounds
 
-STATE_FILE="/tmp/last_battery_state"
-LEVEL_FILE="/tmp/last_battery_level"
+BAT_PATH="/sys/class/power_supply/BAT1"
+BATTERY_LEVEL=$(cat $BAT_PATH/capacity)
+BATTERY_STATE=$(cat $BAT_PATH/status)
 
-get_battery_percentage() {
-  upower -i "$(upower -e | grep 'BAT')" \
-  | awk -F: '/percentage/ {
-      gsub(/[%[:space:]]/, "", $2);
-      print $2; exit
-    }'
-}
-
-get_battery_state() {
-  upower -i "$(upower -e | grep 'BAT')" \
-  | awk -F: '/state/ {gsub(/^[ \t]+/, "", $2); print $2}'
-}
+LAST_STATE_FILE="/tmp/last_battery_state"
+LAST_LEVEL_FILE="/tmp/last_battery_level"
 
 send() {  
   local app=$1 icon=$2 title=$3 body=$4 sound=$5
@@ -31,37 +22,34 @@ send() {
   paplay $SOUND_PATH/$sound
 }
 
-BATTERY_LEVEL=$(get_battery_percentage)
-BATTERY_STATE=$(get_battery_state)
-
 LAST_STATE="none"
-[ -f "$STATE_FILE" ] && LAST_STATE=$(cat "$STATE_FILE")
+[ -f "$LAST_STATE_FILE" ] && LAST_STATE=$(cat "$LAST_STATE_FILE")
 
 LAST_LEVEL=100
-[ -f "$LEVEL_FILE" ] && LAST_LEVEL=$(cat "$LEVEL_FILE")
+[ -f "$LAST_LEVEL_FILE" ] && LAST_LEVEL=$(cat "$LAST_LEVEL_FILE")
 
-# Save for next run
-echo "$BATTERY_STATE" > "$STATE_FILE"
-echo "$BATTERY_LEVEL" > "$LEVEL_FILE"
+# Save for next
+echo "$BATTERY_STATE" > "$LAST_STATE_FILE"
+echo "$BATTERY_LEVEL" > "$LAST_LEVEL_FILE"
 
-if [ $BATTERY_STATE == "discharging" ]; then
-	if [ $LAST_STATE != "discharging" ]; then
+if [ $BATTERY_STATE == "Discharging" ]; then
+	if [ $LAST_STATE != "Discharging" ]; then
 	 	send gray unplug "Discharging" "Battery charger disconnected" unplug.mp3
 	fi
     
 	if [[ $BATTERY_LEVEL -le $CRITICAL && 
-	    ( $LAST_LEVEL -gt $CRITICAL || $LAST_STATE != "discharging" ) ]]; then
+	    ( $LAST_LEVEL -gt $CRITICAL || $LAST_STATE != "Discharging" ) ]]; then
 		send red battery-warning "Battery Critical" "Please plug in your device" battery-critical.mp3
 	fi
 
 	if [[ $BATTERY_LEVEL -le $LOW && $BATTERY_LEVEL -gt $CRITICAL && 
-	    ( $LAST_LEVEL -gt $LOW || $LAST_STATE != "discharging" ) ]]; then
+	    ( $LAST_LEVEL -gt $LOW || $LAST_STATE != "Discharging" ) ]]; then
 	    send yellow battery-low "Battery Low" "Your battery is low" battery-low.mp3
 	fi
 fi
 
-if [ $BATTERY_STATE == "charging" ]; then
-	if [ $LAST_STATE != "charging" ]; then
+if [ $BATTERY_STATE == "Charging" ]; then
+	if [ $LAST_STATE != "Charging" ]; then
 	    send blue battery-charging "Charging" "Battery charger connected" plugin.mp3
 	fi
 

@@ -10,18 +10,16 @@
   	border: none;
 }
 
+/*---WAYBAR---*/
 #waybar {
-	background: transparent;
-  	color: @text;
-  	margin: 0px;
 }
 
 /*---WORKSPACES---*/
 #workspaces {
-	background: @surface0;
-  	border-radius: 1rem;
-  	margin: 0.5rem 0.25rem;
-  	padding: 0.25rem 0.5rem;
+	background: transparent;
+  	border-radius: 0.75rem;
+  	padding: 0rem 0.5rem;
+  	border: 2px solid @text;
 }
 #workspaces button {
   	background: transparent;
@@ -58,107 +56,130 @@
 #battery,
 #clock,
 #power {
-  	background: @surface0;
-  	border-radius: 1rem;
- 	margin: 0.5rem 0.25rem;
- 	padding: 0rem 0.75rem;
+	background: transparent;
+  	border-radius: 0.75rem;
+ 	padding: 0.25rem 0.75rem;
 }
 
 /*---LOGO---*/
 #custom-logo {
-	margin: 0.5rem 0.25rem 0.5rem 1rem;
- 	padding: 0 1.3rem 0 1rem;
-	font-size: 15px;
+ 	padding: 0 1rem 0 0.65rem;
+	font-size: 18px;
 	color: @lavender;
+  	border: 2px solid @lavender;
 }
 
 /*---USER(UPTIME)---*/
 #user {
  	color: @teal;
+  	border: 2px solid @teal;
 }
 
 /*---RAM---*/
 #memory {
  	color: @flamingo;
+  	border: 2px solid @flamingo; 	
 }
 
 /*---CPU---*/
 #cpu {
  	color: @maroon;
+  	border: 2px solid @maroon; 	
 }
 
 /*---IDLE---*/
 #idle_inhibitor {
  	color: @mauve;
+  	border: 2px solid @mauve; 	
 }
 
 /*---MUSIC---*/
 #custom-music {
 	color: @red;
+  	border: 2px solid @red; 	
 }
 
 /*---KEYBOARD-LANG---*/
 #language {
 	color: @sapphire;
+  	border: 2px solid @sapphire; 	
 }
 
 /*---VOLUME---*/
 #wireplumber {
-	color: @lavender;
+	color: @peach;
+  	border: 2px solid @peach; 	
 }
 
 /*---NETWORK---*/
 #network {
-	color: @yellow;
+	color: @lavender;
+  	border: 2px solid @lavender;
+  	padding-left: 0.7rem; 	
 	padding-right: 1rem;
 }
 
 /*---BLUETOOTH---*/
 #bluetooth {
 	color: @blue;
+  	border: 2px solid @blue; 	
 }
 
 /*---BACKLIGHT---*/
 #backlight {
+    padding-left: 0.5rem ;
+    padding-right: 0.75rem ;
   	color: @yellow;
+  	border: 2px solid @yellow; 
 }
 
 /*---BATTERY---*/
 #battery {
 	color: @green;
+  	border: 2px solid @green; 	
 }
 #battery.charging {
   	color: @teal;
+  	border: 2px solid @teal; 	
 }
 #battery.warning:not(.charging) {
   	color: @peach;
+  	border: 2px solid @peach; 	
 }
 #battery.critical:not(.charging) {
   	color: @red;
+  	border: 2px solid @red; 	
 }
 
 /*---CLOCK&DATE---*/
 #clock {
 }
 #clock.time {
-  	color: @teal;
+  	color: @sky;
+  	border: 2px solid @sky; 	
 }
 #clock.date {
   	color: @mauve;
+  	border: 2px solid @mauve; 	
 }
 
 /*---POWER---*/
 #power {
-	margin: 0.5rem 1rem 0.5rem 0.25rem;
-	padding: 0 0.4rem 0 0.25rem;
+	padding-left: 0.1rem;
+	padding-right: 0.4rem;
+  	border: 2px solid @text; 	
 }
-#custom-settings,
+#custom-settings {
+	font-size: 15px;
+	padding: 0 0.5rem;
+	font-weight: bolder;
+}
 #custom-lock, 
 #custom-suspend, 
 #custom-logout, 
 #custom-reboot,
 #custom-power{
-	font-size: 13px;
+	font-size: 16px;
 	padding: 0 0.6rem;
 }
 #custom-settings {
@@ -168,9 +189,9 @@
 	padding: 0 0.6rem 0 0.75rem;
     color: @lavender;
 }
-#custom-suspend {
+/*#custom-suspend {
 	color: @peach;
-}
+}*/
 #custom-logout {
 	color: @yellow;
 }
@@ -179,6 +200,14 @@
 }
 #custom-power {
     color: @red;
+}
+#custom-settings:hover, 
+#custom-lock:hover,
+#custom-suspend:hover, 
+#custom-logout:hover,
+#custom-reboot:hover, 
+#custom-power:hover {
+	color: @text;
 }
 
 /*---TOOLTIPS---*/

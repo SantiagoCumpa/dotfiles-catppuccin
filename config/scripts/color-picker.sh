@@ -3,6 +3,7 @@
 # -------------------------------
 # Rofi + Hyprpicker Color Selector
 # -------------------------------
+pkill -f hyprpicker
 
 formats=(
     "  hex  [#rrggbb]"
