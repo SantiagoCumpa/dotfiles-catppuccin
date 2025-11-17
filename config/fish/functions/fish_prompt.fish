@@ -12,7 +12,7 @@ function fish_prompt
     set -l seg_git_fg   "#11111b"   # text
     set -l seg_err_bg   "#f38ba8"   # red
     set -l seg_err_fg   "#181825"   # text
-    set -l seg_pmt_bg   "#11111B"   # mantle
+    set -l seg_pmt_bg   "#181825"   # mantle
     set -l seg_pmt_fg   "#cdd6f4"   # yellow
 
     # 1. USER and HOST

@@ -1,18 +1,18 @@
 #!/usr/bin/env bash
 
 # Options
-shutdown=''
 lock=''
-reboot=''
 sleep='󰒲'
 logout='󰍃'
+reboot=''
+shutdown=''
 
 # Uptime
 uptime="`uptime -p | sed -e 's/up //g'`"
 
 # Rofi CMD
 powermenu() {
-echo -e "$lock\n$suspend\n$logout\n$reboot\n$shutdown" \
+echo -e "$lock\n$sleep\n$logout\n$reboot\n$shutdown\n" \
  | rofi -dmenu \
 		-p "Uptime: $uptime" \
 		-mesg "Uptime: $uptime" \

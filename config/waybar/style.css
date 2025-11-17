@@ -1,33 +1,29 @@
-@import "mocha.css";
+@import "colors.css";
 
 * {
-	all: unset;
 	font-family: "JetBrainsMono Nerd Font";
-  	font-size: 13px;
+  font-size: 13px;
 	font-weight: bold;
-  	padding: 0;
-  	margin: 0;
-  	border: none;
+  padding: 0;
+  margin: 0;
+  border: none;
 }
 
 /*---WAYBAR---*/
 #waybar {
+	background: @mantle;
+	border: 1px solid gray;
 }
 
 /*---WORKSPACES---*/
 #workspaces {
 	background: transparent;
-  	border-radius: 0.75rem;
-  	padding: 0rem 0.5rem;
-  	border: 2px solid @text;
 }
 #workspaces button {
-  	background: transparent;
-  	color: @blue;
   	border: none;
-  	margin: 0 0.5rem;
+  	padding: 0 0.4rem;
 }
-#workspaces label               { font-size: 16px;  }
+#workspaces label               { font-size: 14px;  }
 #workspaces button:nth-child(1) { color: @blue;		}
 #workspaces button:nth-child(2) { color: @red;      }
 #workspaces button:nth-child(3) { color: @peach;    }
@@ -35,7 +31,7 @@
 #workspaces button:nth-child(5) { color: @pink;     }
 #workspaces button:nth-child(6) { color: @green;    }
 #workspaces button.active       { color: @yellow;   }
-#workspaces button.empty        { color: @overlay0; }
+#workspaces button.empty        { color: @text; }
 #workspaces button:hover {
   	box-shadow: inherit;
   	text-shadow: inherit;
@@ -54,163 +50,87 @@
 #bluetooth,
 #backlight,
 #battery,
-#clock,
-#power {
+#clock {
 	background: transparent;
-  	border-radius: 0.75rem;
- 	padding: 0.25rem 0.75rem;
+ 	padding: 0.5rem;
 }
 
 /*---LOGO---*/
 #custom-logo {
- 	padding: 0 1rem 0 0.65rem;
-	font-size: 18px;
-	color: @lavender;
-  	border: 2px solid @lavender;
+ 	padding: 0 1rem;
+	font-size: 16px;
+	color: @blue;
 }
 
 /*---USER(UPTIME)---*/
 #user {
- 	color: @teal;
-  	border: 2px solid @teal;
+  color: @rosewater;
 }
 
 /*---RAM---*/
 #memory {
- 	color: @flamingo;
-  	border: 2px solid @flamingo; 	
+  color: @flamingo;
 }
 
 /*---CPU---*/
 #cpu {
- 	color: @maroon;
-  	border: 2px solid @maroon; 	
+  color: @pink;
 }
 
 /*---IDLE---*/
 #idle_inhibitor {
  	color: @mauve;
-  	border: 2px solid @mauve; 	
 }
 
 /*---MUSIC---*/
 #custom-music {
-	color: @red;
-  	border: 2px solid @red; 	
+ 	color: @red;
 }
 
 /*---KEYBOARD-LANG---*/
 #language {
-	color: @sapphire;
-  	border: 2px solid @sapphire; 	
+ 	color: @maroon;
 }
 
 /*---VOLUME---*/
 #wireplumber {
-	color: @peach;
-  	border: 2px solid @peach; 	
+ 	color: @peach;
 }
 
 /*---NETWORK---*/
 #network {
-	color: @lavender;
-  	border: 2px solid @lavender;
-  	padding-left: 0.7rem; 	
-	padding-right: 1rem;
+ 	color: @text;
 }
 
 /*---BLUETOOTH---*/
 #bluetooth {
-	color: @blue;
-  	border: 2px solid @blue; 	
+ 	color: @blue;
 }
 
 /*---BACKLIGHT---*/
 #backlight {
-    padding-left: 0.5rem ;
-    padding-right: 0.75rem ;
-  	color: @yellow;
-  	border: 2px solid @yellow; 
+ 	color: @yellow;
 }
 
 /*---BATTERY---*/
 #battery {
-	color: @green;
-  	border: 2px solid @green; 	
+ 	color: @green;
 }
 #battery.charging {
   	color: @teal;
-  	border: 2px solid @teal; 	
 }
 #battery.warning:not(.charging) {
   	color: @peach;
-  	border: 2px solid @peach; 	
 }
 #battery.critical:not(.charging) {
   	color: @red;
-  	border: 2px solid @red; 	
 }
 
 /*---CLOCK&DATE---*/
-#clock {
-}
 #clock.time {
-  	color: @sky;
-  	border: 2px solid @sky; 	
+ 	color: @lavender;
 }
 #clock.date {
-  	color: @mauve;
-  	border: 2px solid @mauve; 	
+ 	color: @mauve;
 }
 
-/*---POWER---*/
-#power {
-	padding-left: 0.1rem;
-	padding-right: 0.4rem;
-  	border: 2px solid @text; 	
-}
-#custom-settings {
-	font-size: 15px;
-	padding: 0 0.5rem;
-	font-weight: bolder;
-}
-#custom-lock, 
-#custom-suspend, 
-#custom-logout, 
-#custom-reboot,
-#custom-power{
-	font-size: 16px;
-	padding: 0 0.6rem;
-}
-#custom-settings {
-	color: @text;
-}
-#custom-lock {
-	padding: 0 0.6rem 0 0.75rem;
-    color: @lavender;
-}
-/*#custom-suspend {
-	color: @peach;
-}*/
-#custom-logout {
-	color: @yellow;
-}
-#custom-reboot {
-	color: @green;
-}
-#custom-power {
-    color: @red;
-}
-#custom-settings:hover, 
-#custom-lock:hover,
-#custom-suspend:hover, 
-#custom-logout:hover,
-#custom-reboot:hover, 
-#custom-power:hover {
-	color: @text;
-}
-
-/*---TOOLTIPS---*/
-tooltip {
-	background: @surface0;
-}

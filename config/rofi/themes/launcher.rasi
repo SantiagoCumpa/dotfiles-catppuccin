@@ -1,0 +1,82 @@
+configuration {
+    modes:                      [drun];
+    show-icons:                 true;
+    icon-theme: 				"Papirus-Dark";
+    display-drun:               "  ";
+}
+@import "mocha"
+
+* {
+  accent: @mauve;
+  fg: @text;
+
+  bg-alt: @crust;
+  fg-alt: @text;
+
+  background-color: @mantle;
+  text-color: @fg;
+}
+
+window {
+    location:                    center;
+    width:                       30%;
+    padding:                     10px;
+    border:                      2px solid;
+    border-color:                @accent;
+    background-color:            @mantle;
+}
+
+inputbar {
+    spacing:                     10px;
+    margin:                      0 0 10px 0;
+    padding:					           8px 0;
+    children:                    [ "prompt", "entry" ];
+    border:                      0 0 1px 0 solid;
+    border-color:                @accent;
+}
+
+prompt {
+    text-color:                  @accent;
+}
+
+entry {
+    cursor:                      text;
+    placeholder:                 "Search application";
+}
+
+listview {
+	  dynamic:					           true;
+    columns:                     1;
+    lines:                       10;
+}
+
+element {
+    margin:                      0px;
+    padding:                     10px;
+    border:                      0px solid;
+    background-color:            transparent;
+    cursor:                      pointer;
+}
+element-text {
+    background-color:            inherit;
+    text-color:                  inherit;
+    vertical-align:				       0.5;
+}
+element normal.normal {
+    background-color:            @mantle;
+    text-color:                  @text;
+}
+element selected.normal {
+    background-color:            @bg-alt;
+    text-color:                  @accent;
+    border:                      1px solid;
+    border-color:                @accent;
+}
+element-icon {
+    background-color:            @mantle;
+    size:                        20px;
+    margin: 			               0 10px 0 0;
+}
+element-icon selected {
+    background-color:		 	       @bg-alt;
+}

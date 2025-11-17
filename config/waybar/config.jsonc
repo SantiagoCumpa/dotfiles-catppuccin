@@ -3,38 +3,48 @@
     "layer": "top",
     "position": "top",
     "spacing": 5,
-    "heigth": 50,
+    "heigth": 32,
     "margin-top": 10,
-    "margin-left": 10,
-    "margin-right": 10,
+    "margin-left": 15,
+    "margin-right": 15,
     "modules-left": [
     	"custom/logo",
-    	"hyprland/workspaces",
+    	"custom/separator",
+    	"niri/workspaces",
+    	"custom/separator",
     	"user",
+    	"custom/separator",
     	"memory",
+    	"custom/separator",
     	"cpu",
+    	"custom/separator",
     	"idle_inhibitor",
     	],
     "modules-center": [
     	"custom/music"
     	],
     "modules-right": [
-    	"hyprland/language",
+    	"niri/language",
+    	"custom/separator",
     	"wireplumber",
+    	"custom/separator",
     	"network",
+    	"custom/separator",
     	"bluetooth",
+    	"custom/separator",
     	"backlight",
+    	"custom/separator",
     	"battery",
+    	"custom/separator",
     	"clock#time",
+    	"custom/separator",
     	"clock#date",
-    	"custom/notification",
-    	"group/power"
     	],
     "custom/logo": {
         "format": "",
         "tooltip": false,
      },
-    "hyprland/workspaces": {
+    "niri/workspaces": {
          "disable-scroll": true,
          "format": "{icon}",
          "format-icons": {
@@ -48,7 +58,7 @@
          },
     },
     "user": {
-		"format": "󱎫 {work_M}min",
+		"format": "󱎫 {work_H}h:{work_M}m",
 		"tooltip": false
     },
     "memory": {
@@ -78,7 +88,7 @@
         "on-click": "playerctl play-pause",
         "max-length": 50
     },
-	"hyprland/language": {
+	"niri/language": {
      	"format": "󰌌 {short}"	
      },
     "wireplumber": {
@@ -128,60 +138,11 @@
     },
     "clock#date": {
         "format": "󰸗 {:%d/%m/%Y}",
-        "tooltip-format": "<span size='10pt'>{calendar}</span>",
-		"calendar": {
-           	"mode": "month",
-           	"format": {
-        	    "months": "<span color='#ff6699'><b>{}</b></span>",
-                "days": "<span color='#cdd6f4'><b>{}</b></span>",
-                "weekdays": "<span color='#7CD37C'><b>{}</b></span>",
-                "today": "<span color='#ffcc66'><b>{}</b></span>"
-            }
-        }
+        "tooltip": false
     },
     "clock#time": {
         "timezone": "America/Lima",
         "format": " {:%H:%M}",
         "tooltip": false
     },
-    "group/power": {
-    	"orientation": "inherit",
-    	"drawer": {
-    		"click-to-reveal": true,
-    		"transition-duration": 250,
-    	    "children-class": "not-power",
-    	    "transition-left-to-right": false,
-    	},
-    	"modules": [
-    		"custom/settings",
-    	    "custom/lock",
-    	    "custom/logout",
-    	    "custom/reboot",
-    	    "custom/power", 
-    	]
-    },
-    "custom/settings": {
-        "format": "",
-    	"tooltip": false
-    },
-    "custom/lock": {
-        "format": "",
-        "tooltip": false,
-        "on-click": "hyprlock"
-    },
-    "custom/logout": {
-        "format": "󰍃",
-        "tooltip": false,
-        "on-click": "hyprctl dispatch exit"
-    },
-    "custom/reboot": {
-        "format": "",
-        "tooltip": false,
-        "on-click": "reboot"
-    },
-    "custom/power": {
-        "format": "",
-        "tooltip": false,
-        "on-click": "shutdown now"
-    }
 }
